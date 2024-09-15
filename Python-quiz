@@ -1,0 +1,22 @@
+questions = [
+    {"question": "Hva er hovedstaden i Norge?", "answer": "Oslo"},
+    {"question": "Hva er 2 + 2?", "answer": "4"},
+    {"question": "Hva heter Norges lengste elv?", "answer": "Glomma"},
+    {"question": "Hva er 3 x 3?", "answer": "9"},
+    {"question": "Hva heter Norges høyeste fjell?", "answer": "Galdhøpiggen"}
+]
+
+# Variabel for å holde styr på antall riktige svar
+score = 0
+
+# Løkke som går gjennom hvert spørsmål i listen
+for q in questions:
+    # Bruker input for å få svar fra brukeren (brukes i Python 3)
+    user_answer = input(q["question"] + " ").strip().lower()
+    # Sammenligner brukerens svar med riktig svar (gjør begge til små bokstaver for å ignorere store/små bokstaver)
+    if user_answer == q["answer"].lower():
+        # Øker poengsummen med 1 hvis svaret er riktig
+        score += 1
+
+# Skriver ut sluttresultatet (bruker f-streng for å sette inn variabler i strengen)
+print(f"Du fikk {score} av {len(questions)} riktige svar!")
